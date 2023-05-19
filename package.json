@@ -1,0 +1,18 @@
+{
+  "name": "atemxtouch",
+  "version": "1.0.0",
+  "description": "control del atem y vlc con xtouch mini",
+  "main": "index.js",
+  "scripts": {
+    "dev": "index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alberto Francisco Iglesias",
+  "license": "ISC",
+  "dependencies": {
+    "atem-connection": "^3.2.0",
+    "easymidi": "^3.0.1",
+    "node-gyp": "^9.3.1",
+    "vlc-client": "^1.1.1"
+  }
+}

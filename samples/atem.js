@@ -5,6 +5,7 @@ const myAtem = new Atem()
 // añadimos midi 
 const midi = require('@julusian/midi');
 const input = new midi.Input();
+let opcion = false
 
 
 
@@ -61,10 +62,27 @@ input.on('message', (deltaTime, message ) => {
     faderGain = convertirRango(message[2])
     myAtem.setFairlightAudioMixerMasterProps({faderGain})
     }
+  
+    if(message[1] == 0 && message[2] == 127){
+      mixOption = opcionMix() 
+      myAtem.setFairlightAudioMixerSourceProps(1,'-65280',{mixOption})
+    }
+
 })
 
 input.openPort(0)
 
+//funcion para cambiar de on a off
+const opcionMix = () => {
+  
+  if (opcion){
+    opcion = false
+    return 2
+  }else{
+    opcion = true
+    return 1
+  }   
+}
 
 // funcion de conversion de rango de audio
 const convertirRango = (valor) => {

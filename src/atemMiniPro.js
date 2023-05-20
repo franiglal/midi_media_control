@@ -4,8 +4,9 @@ const myAtem = new Atem()
 class AtemMiniPro{
     
 
-    constructor(ip){
+    constructor(ip, opcion){
         this.ip = ip
+        this.opcion = opcion
     }
     
     connect(){
@@ -53,9 +54,12 @@ class AtemMiniPro{
     macro(numeroMacro){
         numeroMacro
         myAtem.macroRun(numeroMacro)
-
     }
 
+    audioOnOff(canal){
+      mixOption = this.opcionMix() 
+      myAtem.setFairlightAudioMixerSourceProps(canal,'-65280',{mixOption})
+    }  
     // funcion de conversion de rango de audio
     convertirRango (valor){
         
@@ -68,6 +72,17 @@ class AtemMiniPro{
         return valorConvertido;
   }
   
+
+    opcionMix(){
+  
+      if (this.opcion){
+        this.opcion = false
+        return 2
+      }else{
+        this.opcion = true
+        return 1
+      }   
+    }
         
 }
 

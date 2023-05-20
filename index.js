@@ -2,7 +2,7 @@ const AtemMini = require('./src/atemMiniPro.js')
 const midi = require('@julusian/midi')
 const VLC = require('vlc-client');
 
-const atemMini = new AtemMini('192.168.1.148')
+const atemMini = new AtemMini('192.168.1.148',false)
 const input = new midi.Input()
 //conectar con vlc. IMPORTANTE: tiene que estar activado el html en vlc.
 const vlc = new VLC.Client({

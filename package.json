@@ -4,6 +4,7 @@
   "description": "control del atem y vlc con xtouch mini",
   "main": "index.js",
   "scripts": {
+    "midi": "./samples/midi.js",
     "dev": "index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
